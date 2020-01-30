@@ -29,7 +29,7 @@ $comments = $_REQUEST["comments"];
             comments varchar(500)
             )";
 
-        $qryString = "SELECT COUNT(*) FROM dba_tables where table_name = 'GUEST_REGISTRATION';"
+        $qryString = "SELECT COUNT(*) FROM dba_tables where table_name = 'GUEST_REGISTRATION'";
         $is_created = oci_parse($conn, $qryString);
         oci_execute($is_created);
         $nrows = oci_fetch_all($is_created, $res);
@@ -43,7 +43,7 @@ $comments = $_REQUEST["comments"];
 
     function validate_pin($conn)
     {
-        $qryString = "SELECT personal_id FROM GUEST_REGISTRATION;";
+        $qryString = "SELECT personal_id FROM GUEST_REGISTRATION";
         $stmt = oci_parse($conn, $qryString);
         oci_execute($stmt);
         $nrows = oci_fetch_all($stmt, $res);
