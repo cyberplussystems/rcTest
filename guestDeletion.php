@@ -20,7 +20,7 @@ if (!$conn) {
 }
 
 // Delete Guest
-$stmt = oci_parse($conn, "DELETE FROM GUEST_REGISTRATION WHERE personal_id=$personal_id;");
+$stmt = oci_parse($conn, "DELETE FROM GUEST_REGISTRATION WHERE personal_id=$personal_id");
 oci_execute($stmt);
 
 if ($conn->query($stmt) === TRUE) {
