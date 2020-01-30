@@ -7,11 +7,6 @@ $connection_string = "//localhost:1521/XEPDB1";
 
 $personal_id = $_REQUEST["guestId"];
 
-function delete_guest($conn)
-{
-
-}
-
 // Database Connection
 $conn = oci_connect($username, $password, $connection_string);
 if (!$conn) {
