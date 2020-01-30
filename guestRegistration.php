@@ -18,7 +18,7 @@ $comments = $_REQUEST["comments"];
     function create_table($conn)
     {
         $schema = "CREATE TABLE GUEST_REGISTRATION (
-            personal_id INT(7) UNSIGNED NOT NULL PRIMARY KEY,
+            personal_id NUMBER NOT NULL,
             first_name VARCHAR(50) NOT NULL,
             last_name VARCHAR(50) NOT NULL,
             email_address VARCHAR(100) NOT NULL,
@@ -26,7 +26,8 @@ $comments = $_REQUEST["comments"];
             email_list_flag NUMBER NOT NULL,
             ship varchar(100) NOT NULL,
             sail_date date NOT NULL,
-            comments varchar(500)
+            comments varchar(500),
+            CONSTRAINT personal_id_pk PRIMARY KEY (personal_id)
             )";
 
         $qryString = "SELECT COUNT(*) FROM dba_tables where table_name = 'GUEST_REGISTRATION'";
